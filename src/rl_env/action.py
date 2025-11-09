@@ -7,7 +7,7 @@ from typing import Dict, Tuple
 K = 6 
 
 class PolicyNet(nn.Module):
-    def __init__(self, obs_dim: int, hidden: int = 128):
+    def __init__(self, obs_dim: int, hidden: int = 256):
         super().__init__()
         self.body = nn.Sequential(
             nn.Linear(obs_dim, hidden),
@@ -26,4 +26,4 @@ class PolicyNet(nn.Module):
         temp   = torch.sigmoid(self.temp_head(h)).squeeze(-1)  
         return logits, value, temp
     
-class LLM ()
+    
